@@ -4,7 +4,7 @@ const Characters = () => {
     //fetch from marvel api character data
 
     const getMarvelCharacters = () => {
-        fetch('https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=40&apikey=30b2ee8a922f31b3cb43e47c5860246b')
+        fetch('https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=40&apikey=${MARVELHUB_KEY}')
         .then(response => response.json())
         .then(data => console.log(data))
     }
