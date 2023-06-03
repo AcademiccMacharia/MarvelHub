@@ -58,7 +58,3 @@ const Characters = () => {
 
 export default Characters;
 
-<<<<<<< HEAD
-=======
-export default Characters
->>>>>>> refs/remotes/origin/main
