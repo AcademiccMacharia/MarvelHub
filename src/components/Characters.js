@@ -25,7 +25,7 @@ const Characters = () => {
   useEffect(() => {
     getMarvelCharacters();
     document.title = "Characters"
-  });
+  }, []);
 
   return (
     <div className="characters">

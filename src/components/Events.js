@@ -21,7 +21,7 @@ const Events = () => {
   useEffect(() => {
     getMarvelEvents();
     document.title = "Events";
-  })
+  }, [])
 
   return (
     <div className="events">

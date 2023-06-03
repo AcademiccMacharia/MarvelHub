@@ -22,7 +22,7 @@ const Comics = () => {
   useEffect(() => {
     getMarvelCharacters();
     document.title = "Comics"
-  });
+  }, []);
 
   return (
     <div className="comics">

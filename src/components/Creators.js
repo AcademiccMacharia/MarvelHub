@@ -21,7 +21,7 @@ const Creators = () => {
   useEffect(() => {
     getMarvelCreators();
     document.title = "Creators";
-  })
+  }, [])
 
   return (
     <div className="creators">

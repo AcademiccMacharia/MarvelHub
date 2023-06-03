@@ -19,7 +19,7 @@ const Series = () => {
     }
     useEffect(() => {
         getMarvelSeries()
-    })
+    }, [])
 
     return (
         <div className="series">
