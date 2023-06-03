@@ -1,21 +1,60 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import the Link component
+import CharacterDetails from './single/CharacterDetails';
 
 const Characters = () => {
-    //fetch from marvel api character data
+  const [characters, setCharacters] = useState([]);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
-    const getMarvelCharacters = () => {
-        fetch('https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=40&apikey=30b2ee8a922f31b3cb43e47c5860246b')
-        .then(response => response.json())
-        .then(data => console.log(data))
+  const apiURL =
+    `https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=40&apikey=${process.env.REACT_APP_API_KEY}`;
+
+  const getMarvelCharacters = async () => {
+    try {
+      const res = await axios.get(apiURL);
+      const data = res.data;
+      const charactersData = data?.data?.results;
+      setCharacters(charactersData);
+      console.log(charactersData);
+    } catch (error) {
+      console.log(error);
     }
-    console.log(getMarvelCharacters())
-    return (
-        <div className='characters'>
-            <h4>Marvel Characters</h4>
-            <div className='characters-list'>
-            </div>
-        </div>
-    )
-}
+  };
 
-export default Characters
+  useEffect(() => {
+    getMarvelCharacters();
+    document.title = "Characters"
+  });
+
+  return (
+    <div className="characters">
+      <h4>Marvel Characters</h4>
+      <div className="characters-list">
+        {characters.map((character) => {
+          const { id, name, thumbnail } = character;
+
+          const handleCharacterClick = () => {
+            setSelectedCharacter(character);
+          };
+
+          return (
+            
+              <div className="character"  key={id} >
+                <Link to={`/characters/${id}`}>
+                <img onClick={handleCharacterClick} className="glitch-image" src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
+                </Link>
+                <div className="character-info">
+                  <h5>Name: {name}</h5>
+                </div>
+              </div>
+          );
+        })}
+      </div>
+      {selectedCharacter && <CharacterDetails character={selectedCharacter} />}
+    </div>
+  );
+};
+
+export default Characters;
+
