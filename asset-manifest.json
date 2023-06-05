@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MarvelHub/static/css/main.5da6b4fc.css",
+    "main.js": "/MarvelHub/static/js/main.4bdf8fa2.js",
+    "static/media/vid.mp4": "/MarvelHub/static/media/vid.8cc678f7d22976d5326e.mp4",
+    "static/media/story.jpeg": "/MarvelHub/static/media/story.5df23d6fb30289ac844f.jpeg",
+    "index.html": "/MarvelHub/index.html",
+    "main.5da6b4fc.css.map": "/MarvelHub/static/css/main.5da6b4fc.css.map",
+    "main.4bdf8fa2.js.map": "/MarvelHub/static/js/main.4bdf8fa2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5da6b4fc.css",
+    "static/js/main.4bdf8fa2.js"
+  ]
+}
