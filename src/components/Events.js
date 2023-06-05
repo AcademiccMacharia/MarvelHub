@@ -7,7 +7,7 @@ const Events = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const apiURL = `https://gateway.marvel.com:443/v1/public/events?limit=64&offset=20&apikey=${process.env.REACT_APP_API_KEY}`;
+  const apiURL = `https://gateway.marvel.com:443/v1/public/events?limit=64&offset=20&apikey=30b2ee8a922f31b3cb43e47c5860246b`;
 
   const getMarvelEvents = async () => {
     try {

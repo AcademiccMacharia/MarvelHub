@@ -9,7 +9,7 @@ const ComicsDetails = () => {
 
   const fetchComic = useCallback(async (comicId) => {
     try {
-      const apiURL = `https://gateway.marvel.com:443/v1/public/comics/${comicId}?apikey=${process.env.REACT_APP_API_KEY}`;
+      const apiURL = `https://gateway.marvel.com:443/v1/public/comics/${comicId}?apikey=30b2ee8a922f31b3cb43e47c5860246b`;
       const res = await axios.get(apiURL);
       const data = res.data;
       const comicData = data?.data?.results[0];

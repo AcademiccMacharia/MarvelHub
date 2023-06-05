@@ -11,7 +11,7 @@ const CharacterDetails = () => {
 
   const fetchCharacter = useCallback(async (characterId) => {
     try {
-      const apiURL = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=${process.env.REACT_APP_API_KEY}`;
+      const apiURL = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?apikey=30b2ee8a922f31b3cb43e47c5860246b`;
       const res = await axios.get(apiURL);
       const data = res.data;
       const characterData = data?.data?.results[0];

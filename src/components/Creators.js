@@ -6,7 +6,7 @@ const Creators = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const apiURL = `https://gateway.marvel.com:443/v1/public/creators?limit=64&offset=45&apikey=${process.env.REACT_APP_API_KEY}`;
+  const apiURL = `https://gateway.marvel.com:443/v1/public/creators?limit=64&offset=45&apikey=30b2ee8a922f31b3cb43e47c5860246b`;
 
   const getMarvelCreators = async () => {
     try {

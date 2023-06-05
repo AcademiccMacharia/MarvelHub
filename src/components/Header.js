@@ -11,13 +11,13 @@ const Header = () => {
                 </div>
                 <div className='nav-items'>
                     <ul className="nav-links">
-                        <Link className='link-style' to="/"><li>Home</li></Link>
-                        <Link className='link-style' to="/characters"><li>Characters</li></Link>
-                        <Link className='link-style' to="/comics"><li>Comics</li></Link>
-                        <Link className='link-style' to="/creators"><li>Creators</li></Link>
-                        <Link className='link-style' to="/events"><li>Events</li></Link>
-                        <Link className='link-style' to="/stories"><li>Stories</li></Link>
-                        <Link className='link-style' to="/series"><li>Series</li></Link>
+                        <Link className='link-style' to="/MarvelHub"><li>Home</li></Link>
+                        <Link className='link-style' to="/MarvelHub/characters"><li>Characters</li></Link>
+                        <Link className='link-style' to="/MarvelHub/comics"><li>Comics</li></Link>
+                        <Link className='link-style' to="/MarvelHub/creators"><li>Creators</li></Link>
+                        <Link className='link-style' to="/MarvelHub/events"><li>Events</li></Link>
+                        <Link className='link-style' to="/MarvelHub/stories"><li>Stories</li></Link>
+                        <Link className='link-style' to="/MarvelHub/series"><li>Series</li></Link>
                     </ul>
                 </div>
                 <div className='search-bar'>
