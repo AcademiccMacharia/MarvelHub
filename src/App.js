@@ -15,51 +15,51 @@ import ComicsDetails from './components/single/ComicsDetails';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/MarvelHub',
     element: <Header />, 
     children: [
       {
-        path: '/',
+        path: '/MarvelHub',
         element: <Home />
       },
       {
-        path: '/characters',
+        path: '/MarvelHub/characters',
         element: <Characters />
       },
       {
-        path: '/characters/:characterId',
+        path: '/MarvelHub/characters/:characterId',
         element: <CharacterDetails />
       },
       {
-        path: '/comics',
+        path: '/MarvelHub/comics',
         element: <Comics />
       },
       {
-        path: '/comics/:comicId',
+        path: '/MarvelHub/comics/:comicId',
         element: <ComicsDetails />
       },
       { 
-        path: '/creators',
+        path: '/MarvelHub/creators',
         element: <Creators />
       },
       {
-        path: '/events/:eventId',
+        path: '/MarvelHub/events/:eventId',
         element: <EventDetails />
       },
       {
-        path: '/events',
+        path: '/MarvelHub/events',
         element: <Events />
       },
       {
-        path: '/stories',
+        path: '/MarvelHub/stories',
         element: <Stories />
       },
       {
-        path: '/series',
+        path: '/MarvelHub/series',
         element: <Series />
       },
       {
-        path: '/series/:serieId',
+        path: '/MarvelHub/series/:serieId',
         element: <SeriesDetails />
       }
     ]
