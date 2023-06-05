@@ -9,6 +9,9 @@ import Stories from './components/Stories';
 import Series from './components/Series';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
+import EventDetails from './components/single/EventDetails';
+import SeriesDetails from './components/single/SeriesDetails';
+import ComicsDetails from './components/single/ComicsDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,9 +34,17 @@ const router = createBrowserRouter([
         path: '/comics',
         element: <Comics />
       },
+      {
+        path: '/comics/:comicId',
+        element: <ComicsDetails />
+      },
       { 
         path: '/creators',
         element: <Creators />
+      },
+      {
+        path: '/events/:eventId',
+        element: <EventDetails />
       },
       {
         path: '/events',
@@ -46,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: '/series',
         element: <Series />
+      },
+      {
+        path: '/series/:serieId',
+        element: <SeriesDetails />
       }
     ]
   }

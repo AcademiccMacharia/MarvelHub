@@ -119,6 +119,10 @@ video {
   border-left: 2px solid red;
   padding-left: 10px;
 }
+.search-bar input {
+  width: 200px;
+}
+
 .search-bar:hover {
   color: red;
   cursor: pointer;
@@ -132,7 +136,12 @@ span {
 .link-style h1 {
   color: white;
 }
-
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  margin-bottom: 20px;
+}
 /* character page styles */
 
 .characters,
@@ -544,7 +553,7 @@ span {
 }
 
 /* single styles */
-.character-details{
+.character-details {
   overflow: hidden;
 }
 .character-details h4 {
@@ -562,25 +571,25 @@ span {
   gap: 20px;
   color: #ffffff;
 }
-.details-list img{
+.details-list img {
   place-self: center;
   width: 300px;
   height: 300px;
 }
-.details-info{
+.details-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 400px;
 }
-.details-info h5{
+.details-info h5 {
   font-size: 16px;
   font-weight: 600;
   font-family: "Cormorant Garmond", sans-serif;
   margin-bottom: 20px;
 }
-.details-info h6{
+.details-info h6 {
   font-size: 14px;
   font-weight: 600;
   font-family: "Cormorant Garmond", sans-serif;
@@ -588,27 +597,35 @@ span {
   padding-bottom: 10px;
   border-bottom: 1px solid red;
 }
-.details-info ul{
-list-style-type: square;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-start;
-font-size: 12px;
-text-align: left;
-width: 200px;
-margin-top: 10px;
+.details-info p {
+  font-size: 12px;
+  font-family: "Cormorant Garmond", sans-serif;
+  margin-bottom: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.5;
 }
-.details-info li{
+.details-info ul {
+  list-style-type: square;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 12px;
+  text-align: left;
+  width: 200px;
+  margin-top: 10px;
+}
+.details-info li {
   font-family: "Cormorant Garmond", sans-serif;
   text-align: left;
   text-transform: capitalize;
   margin-bottom: 5px;
 }
-.back-link{
+.back-link {
   text-decoration: none;
 }
-.back-link p{
+.back-link p {
   margin: 20px;
   width: fit-content;
   padding: 4px 6px;
@@ -619,7 +636,7 @@ margin-top: 10px;
   box-shadow: 2px 2px 4px rgba(225, 217, 217, 0.796);
 }
 
-.navigation-icons{
+.navigation-icons {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -638,4 +655,74 @@ margin-top: 10px;
 .right-arrow {
   color: #0078c1;
   margin-right: 40px;
+}
+/* media queries for tablet */
+
+@media (max-width: 1000px) {
+  .characters-list,
+  .stories-list,
+  .series-list,
+  .events-list,
+  .comics-list,
+  .creators-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* media queries for mobile */
+@media (max-width: 768px) {
+  .characters-list,
+  .stories-list,
+  .series-list,
+  .events-list,
+  .comics-list,
+  .creators-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .navbar .logo {
+    font-size: 16px;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar .search-bar {
+    visibility: hidden;
+  }
+  .characters h4 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .search-bar input {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar .nav-items ul li {
+    padding: 4px 6px;
+  }
+  .content {
+    width: 80%;
+    text-align: center;
+    padding-left: 20px;
+  }
+  .characters-list,
+  .stories-list,
+  .series-list,
+  .events-list,
+  .comics-list,
+  .creators-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .characters h4,
+  .stories h4,
+  .series h4,
+  .events h4,
+  .comics h4,
+  .creators h4 {
+    text-align: center;
+    font-size: 16px;
+  }
+  .search-bar input {
+    margin-left: 100px;
+  }
 }

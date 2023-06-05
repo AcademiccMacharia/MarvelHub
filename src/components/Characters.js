@@ -1,14 +1,13 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import the Link component
-import CharacterDetails from './single/CharacterDetails';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
-  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
-  const apiURL =
-    `https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=40&apikey=${process.env.REACT_APP_API_KEY}`;
+  const apiURL = `https://gateway.marvel.com:443/v1/public/characters?limit=50&offset=40&apikey=${process.env.REACT_APP_API_KEY}`;
 
   const getMarvelCharacters = async () => {
     try {
@@ -16,7 +15,6 @@ const Characters = () => {
       const data = res.data;
       const charactersData = data?.data?.results;
       setCharacters(charactersData);
-      console.log(charactersData);
     } catch (error) {
       console.log(error);
     }
@@ -27,34 +25,50 @@ const Characters = () => {
     document.title = "Characters"
   }, []);
 
+  useEffect(() => {
+    const results = characters.filter(character =>
+      character.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(results);
+  }, [searchQuery, characters]);
+
+  const handleSearch = e => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className="characters">
       <h4>Marvel Characters</h4>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by character name..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+      </div>
       <div className="characters-list">
-        {characters.map((character) => {
-          const { id, name, thumbnail } = character;
+        {searchResults.length > 0 ? (
+          searchResults.map(character => {
+            const { id, name, thumbnail } = character;
 
-          const handleCharacterClick = () => {
-            setSelectedCharacter(character);
-          };
-
-          return (
-            
-              <div className="character"  key={id} >
+            return (
+              <div className="character" key={id}>
                 <Link to={`/characters/${id}`}>
-                <img onClick={handleCharacterClick} className="glitch-image" src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
+                  <img className="glitch-image" src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
                 </Link>
                 <div className="character-info">
                   <h5>Name: {name}</h5>
                 </div>
               </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <p>No matching characters found.</p>
+        )}
       </div>
-      {selectedCharacter && <CharacterDetails character={selectedCharacter} />}
     </div>
   );
 };
 
 export default Characters;
-
