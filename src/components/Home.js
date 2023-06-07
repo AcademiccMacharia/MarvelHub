@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import videoBg from '../assets/vid.mp4'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+
+  useEffect(() => {
+    document.title = "MarvelHub"
+  }, [])
   return (
     <div className="homepage">
       <div className='overlay'></div>
