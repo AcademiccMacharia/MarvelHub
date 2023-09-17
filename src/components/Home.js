@@ -15,7 +15,7 @@ const Home = () => {
         <h3>MarvelHub</h3>
         <p><span>Marvelize Your World</span></p>
         <p> Unlock the Marvel Universe's Endless Wonders! Dive into the Backstories of Iconic Characters, Amass a Collection of Rare Comics, Pay Tribute to the Visionary Creators, Immerse Yourself in Thrilling Events, and Embark on Epic Journeys through Unforgettable Stories.</p>
-        <Link to="/characters"><button className='home-btn'>Dive In!</button></Link>
+        <Link to="/MarvelHub/characters"><button className='home-btn'>Dive In!</button></Link>
       </div>
     </div>
   )
